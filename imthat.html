@@ -3,30 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I'm That Student</title>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+<title>I'm That Student - Dark Feminine Edition</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script&display=swap" rel="stylesheet">
 <style>
-/* Global */
+/* GLOBAL STYLES */
 body {
     margin: 0;
-    font-family: 'cursive', 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ffe4e1, #ffb6c1);
-    display: flex;
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(135deg, #330000, #660000);
+    color: #FFD700;
     overflow-x: hidden;
     position: relative;
 }
 
-/* Floating cute animations */
+/* Floating animations */
 @keyframes sparkle {
     0% {transform: translateY(0) rotate(0deg); opacity:1;}
     100% {transform: translateY(-1000px) rotate(360deg); opacity:0;}
 }
 .sparkle {
     position: absolute;
-    width: 10px; height: 10px;
-    background: yellow;
+    width: 12px; height: 12px;
+    background: gold;
     border-radius: 50%;
-    animation: sparkle 10s linear infinite;
+    animation: sparkle 12s linear infinite;
 }
 
 @keyframes spinFlower {
@@ -36,26 +36,23 @@ body {
 .flower {
     position: absolute;
     width: 40px; height: 40px;
-    background: pink;
+    background: #ff3366;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     animation: spinFlower 8s linear infinite;
 }
 
-/* Main Content */
-.main-content {
-    flex: 1;
-    padding: 40px;
-}
+/* MAIN CONTENT */
+.main-content { flex:1; padding: 40px; max-width: 900px; margin-right: 250px; }
 
-/* Side Navigation */
+/* SIDE NAVIGATION */
 .side-nav {
     width: 220px;
-    background: rgba(255, 182, 193, 0.85);
+    background: rgba(102,0,0,0.9);
     padding-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-left: 2px solid #ff69b4;
+    border-left: 2px solid gold;
     position: fixed;
     right: 0;
     height: 100vh;
@@ -64,38 +61,26 @@ body {
     background: transparent;
     border: none;
     margin: 15px 0;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
-    font-family: monospace;
-    font-variant: small-caps;
-    color: #ff1493;
+    font-family: 'Great Vibes', cursive;
+    color: #FFD700;
     transition: 0.3s;
 }
 .side-nav button:hover {
     transform: scale(1.1);
-    color: #fff;
-    text-shadow: 1px 1px 3px #ff69b4;
+    color: #FF69B4;
+    text-shadow: 1px 1px 5px #FF1493;
 }
 
-/* Screens */
-.screen {
-    display: none;
-    max-width: 800px;
-    margin-right: 240px;
-    padding: 30px;
-    background: rgba(255, 240, 245, 0.9);
-    border-radius: 20px;
-    margin-top: 40px;
-    font-family: 'cursive';
-}
-.screen.active {
-    display: block;
-}
+/* SCREENS */
+.screen { display: none; padding: 30px; border-radius: 20px; background: rgba(51,0,0,0.85); }
+.screen.active { display:block; }
 
-/* Buttons */
+/* BUTTONS */
 button.action-btn {
-    background: linear-gradient(45deg, #ffb6c1, #ff69b4);
-    color: white;
+    background: linear-gradient(45deg, #FF3366, #FF0000);
+    color: #FFD700;
     border: none;
     padding: 10px 20px;
     border-radius: 15px;
@@ -105,253 +90,179 @@ button.action-btn {
 }
 button.action-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-/* Inputs */
-input, select, textarea {
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    margin: 5px 0;
-    width: 90%;
-}
+/* INPUTS & TEXTAREAS */
+input, select, textarea { padding: 10px; border-radius: 10px; border: 1px solid #FFD700; margin: 5px 0; width: 90%; background: rgba(255,255,255,0.1); color: #FFD700; }
 
-/* Workspace Notes */
+/* WORKSPACE NOTES */
 .note {
-    background: #fff0f5;
-    padding: 10px;
-    margin: 10px 0;
+    background: rgba(255,0,51,0.5);
+    padding: 10px; margin: 10px 0;
     border-radius: 12px;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    color: #FFF0F5;
 }
+.marker { width:20px; height:20px; border-radius:50%; display:inline-block; margin:2px; cursor:pointer; border:2px solid #FFD700; }
+
+#timerDisplay { font-size: 60px; text-align:center; margin: 50px 0; }
+
+/* PROGRESS PHOTOS */
+#selfieGallery img { width: 150px; margin:10px; border:2px solid gold; border-radius:10px; }
+
 </style>
 </head>
 <body>
 
-<!-- Floating Animations -->
+<!-- FLOATING ANIMATIONS -->
 <div class="sparkle" style="top:90%; left:10%;"></div>
 <div class="sparkle" style="top:80%; left:50%;"></div>
 <div class="sparkle" style="top:60%; left:70%;"></div>
 <div class="flower" style="top:20%; left:20%;"></div>
 <div class="flower" style="top:50%; left:80%;"></div>
 
+<!-- MAIN CONTENT -->
 <div class="main-content">
-    <!-- Home Screen -->
-    <div class="screen active" id="homeScreen">
-        <h1>Welcome to I’m That Student! 🎀</h1>
-        <p>Enter your name and grade to start your cute study journey!</p>
-        <input type="text" id="username" placeholder="Your name">
-        <br>
-        <select id="grade">
-            <option value="6">6th Grade</option>
-            <option value="7">7th Grade</option>
-            <option value="8">8th Grade</option>
-            <option value="9">9th Grade</option>
-            <option value="10">10th Grade</option>
-        </select>
-        <br>
-        <button class="action-btn" onclick="setupAccount()">Create Account</button>
-    </div>
 
-    <!-- Workspace -->
-    <div class="screen" id="workspaceScreen">
-        <h1>🌸 Workspace 🌸</h1>
-        <textarea id="noteInput" placeholder="Write your cute notes here..." rows="6"></textarea>
+<!-- WELCOME SCREEN -->
+<div class="screen active" id="welcomeScreen">
+    <h1 style="font-family:'Great Vibes', cursive; font-size:50px;">Welcome to I’m That Student 💋</h1>
+    <p>Loading your seductive study space...</p>
+</div>
+
+<!-- HOME / ACCOUNT CREATION -->
+<div class="screen" id="homeScreen">
+    <h1>Enter your name & grade 💄</h1>
+    <input type="text" id="username" placeholder="Your name">
+    <br>
+    <select id="grade">
+        <option value="6">6th Grade</option>
+        <option value="7">7th Grade</option>
+        <option value="8">8th Grade</option>
+        <option value="9">9th Grade</option>
+        <option value="10">10th Grade</option>
+    </select>
+    <br>
+    <button class="action-btn" onclick="setupAccount()">Enter Study Space</button>
+</div>
+
+<!-- WORKSPACE -->
+<div class="screen" id="workspaceScreen">
+    <h1>🌹 Workspace 🌹</h1>
+    <div>
+        <textarea id="noteInput" placeholder="Write your seductive notes..." rows="6"></textarea>
         <br>
         <button class="action-btn" onclick="addNote()">Add Note</button>
-        <div id="notesContainer"></div>
     </div>
-
-    <!-- Checklist -->
-    <div class="screen" id="checklistScreen">
-        <h1>Checklist 📝</h1>
-        <input type="text" id="taskInput" placeholder="New Task">
-        <button class="action-btn" onclick="addTask()">Add</button>
-        <ul id="taskList"></ul>
+    <div>
+        <span>Select Marker:</span>
+        <div id="markers">
+            <span class="marker" style="background:red;" onclick="selectMarker('red')"></span>
+            <span class="marker" style="background:gold;" onclick="selectMarker('gold')"></span>
+            <span class="marker" style="background:hotpink;" onclick="selectMarker('hotpink')"></span>
+        </div>
     </div>
-
-    <!-- Motivation -->
-    <div class="screen" id="motivationScreen">
-        <h1>Motivation 💖</h1>
-        <p id="motivationText">“You are doing amazing, keep going!”</p>
-        <button class="action-btn" onclick="newMotivation()">Get New Quote ✨</button>
-    </div>
-
-    <!-- Recording -->
-    <div class="screen" id="recordScreen">
-        <h1>Record Yourself 🎤</h1>
-        <button class="action-btn" onclick="startRecording('audio')">Record Audio</button>
-        <button class="action-btn" onclick="startRecording('video')">Record Video</button>
-        <div id="recordingArea"></div>
-    </div>
-
-    <!-- Pomodoro Timer -->
-    <div class="screen" id="pomodoroScreen">
-        <h1>Pomodoro Timer 🍅</h1>
-        <p id="timerDisplay">25:00</p>
-        <button class="action-btn" onclick="startTimer()">Start</button>
-        <button class="action-btn" onclick="pauseTimer()">Pause</button>
-        <button class="action-btn" onclick="resetTimer()">Reset</button>
-    </div>
-
-    <!-- Sounds -->
-    <div class="screen" id="soundsScreen">
-        <h1>Background Sounds 🎵</h1>
-        <audio id="bgAudio" controls loop>
-            <source src="https://cdn.pixabay.com/download/audio/2021/09/15/audio_1e69c3c7b0.mp3?filename=focus-meditation-114.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
+    <div id="notesContainer"></div>
 </div>
 
-<!-- Side Navigation -->
+<!-- CHECKLIST -->
+<div class="screen" id="checklistScreen">
+    <h1>Checklist 📝</h1>
+    <input type="text" id="taskInput" placeholder="New Task">
+    <button class="action-btn" onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+</div>
+
+<!-- MOTIVATION -->
+<div class="screen" id="motivationScreen">
+    <h1>Motivation 💖</h1>
+    <p id="motivationText">“You are doing amazing, keep going!”</p>
+    <button class="action-btn" onclick="newMotivation()">Get New Quote ✨</button>
+</div>
+
+<!-- RECORDING -->
+<div class="screen" id="recordScreen">
+    <h1>Record Yourself 🎤</h1>
+    <button class="action-btn" onclick="startRecording('audio')">Record Audio</button>
+    <button class="action-btn" onclick="startRecording('video')">Record Video</button>
+    <div id="recordingArea"></div>
+</div>
+
+<!-- POMODORO TIMER -->
+<div class="screen" id="pomodoroScreen">
+    <h1>Pomodoro Timer 🍅</h1>
+    <p id="timerDisplay">25:00</p>
+    <button class="action-btn" onclick="startTimer()">Start</button>
+    <button class="action-btn" onclick="pauseTimer()">Pause</button>
+    <button class="action-btn" onclick="resetTimer()">Reset</button>
+</div>
+
+<!-- SOUNDS -->
+<div class="screen" id="soundsScreen">
+    <h1>Study Sounds 🎵</h1>
+    <audio id="bgAudio" controls loop>
+        <source src="https://cdn.pixabay.com/download/audio/2021/09/15/audio_1e69c3c7b0.mp3?filename=focus-meditation-114.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<!-- PROGRESS PHOTOS -->
+<div class="screen" id="progressScreen">
+    <h1>Progress Photos 📸</h1>
+    <button class="action-btn" onclick="takeSelfie()">Take Selfie 💄</button>
+    <div id="selfieGallery"></div>
+</div>
+
+</div>
+
+<!-- SIDE NAVIGATION -->
 <div class="side-nav">
-    <button onclick="showScreen('homeScreen')">𝚑𝚘𝚖𝚎</button>
-    <button onclick="showScreen('workspaceScreen')">𝚠𝚘𝚛𝚔𝚜𝚙𝚊𝚌𝚎</button>
-    <button onclick="showScreen('checklistScreen')">𝚌𝚑𝚎𝚌𝚔𝚕𝚒𝚜𝚝</button>
-    <button onclick="showScreen('motivationScreen')">𝚖𝚘𝚝𝚒𝚟𝚊𝚝𝚒𝚘𝚗</button>
-    <button onclick="showScreen('recordScreen')">𝚛𝚎𝚌𝚘𝚛𝚍</button>
-    <button onclick="showScreen('pomodoroScreen')">𝚙𝚘𝚖𝚘𝚍𝚘𝚛𝚘</button>
-    <button onclick="showScreen('soundsScreen')">𝚜𝚘𝚞𝚗𝚍𝚜</button>
+    <button onclick="playClick(); showScreen('homeScreen')">Home</button>
+    <button onclick="playClick(); showScreen('workspaceScreen')">Workspace</button>
+    <button onclick="playClick(); showScreen('checklistScreen')">Checklist</button>
+    <button onclick="playClick(); showScreen('motivationScreen')">Motivation</button>
+    <button onclick="playClick(); showScreen('recordScreen')">Record</button>
+    <button onclick="playClick(); showScreen('pomodoroScreen')">Pomodoro</button>
+    <button onclick="playClick(); showScreen('soundsScreen')">Sounds</button>
+    <button onclick="playClick(); showScreen('progressScreen')">Progress</button>
 </div>
 
+<!-- SCRIPTS -->
 <script>
-// Navigation
+// BUTTON SOUND
+const clickSound = new Audio('https://freesound.org/data/previews/341/341695_6242412-lq.mp3');
+function playClick(){ clickSound.play(); }
+
+// WELCOME SCREEN AUTOMATION
+const pingSound = new Audio('https://freesound.org/data/previews/331/331912_3248244-lq.mp3');
+window.onload = ()=>{
+    pingSound.play();
+    setTimeout(()=>{ showScreen('homeScreen'); },3000);
+}
+
+// NAVIGATION
 function showScreen(screenId){
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
     document.getElementById(screenId).classList.add('active');
 }
 
-// Account setup
-function setupAccount() {
+// ACCOUNT SETUP
+function setupAccount(){
     const username = document.getElementById('username').value.trim();
-    const grade = document.getElementById('grade').value;
-    if(!username) { alert("Please enter your name!"); return; }
-
-    document.getElementById('homeScreen').style.display='none';
+    if(!username){ alert("Enter your name!"); return; }
+    cutePopup(`Hello ${username}! 💋`,2000);
     showScreen('workspaceScreen');
-    cutePopup(`Hello ${username}! 🎀`, 2000);
 }
 
-// Workspace Notes
+// WORKSPACE NOTES
+let currentMarker='red';
+function selectMarker(color){ currentMarker=color; }
 function addNote(){
-    const noteText = document.getElementById('noteInput').value.trim();
-    if(!noteText) return;
-    const noteDiv = document.createElement('div');
-    noteDiv.className = 'note';
-    noteDiv.innerText = noteText;
-    document.getElementById('notesContainer').appendChild(noteDiv);
-    document.getElementById('noteInput').value='';
-}
-
-// Checklist
-function addTask() {
-    const input = document.getElementById('taskInput');
-    const task = input.value.trim();
-    if(!task) return;
-    const li = document.createElement('li');
-    li.innerText = task;
-    document.getElementById('taskList').appendChild(li);
-    input.value='';
-}
-
-// Motivation
-const quotes = [
-    "You are doing amazing, keep going! 💖",
-    "Believe in yourself! 🌸",
-    "Small steps every day lead to big results! ✨",
-    "You got this, superstar! 💫",
-    "Stay cute and study hard! 🎀"
-];
-function newMotivation() {
-    const idx = Math.floor(Math.random()*quotes.length);
-    document.getElementById('motivationText').innerText=quotes[idx];
-}
-
-// Recording
-let mediaRecorder;
-let chunks=[];
-function startRecording(type){
-    const area=document.getElementById('recordingArea');
-    area.innerHTML="";
-    let constraints;
-    if(type==='audio') constraints={audio:true};
-    else constraints={audio:true, video:true};
-
-    navigator.mediaDevices.getUserMedia(constraints)
-    .then(stream=>{
-        mediaRecorder=new MediaRecorder(stream);
-        chunks=[];
-        mediaRecorder.ondataavailable=e=>chunks.push(e.data);
-        mediaRecorder.onstop=()=>{
-            const blob=new Blob(chunks,{type:type==='audio'?'audio/webm':'video/webm'});
-            const url=URL.createObjectURL(blob);
-            let element;
-            if(type==='audio'){
-                element=document.createElement('audio');
-                element.controls=true;
-                element.src=url;
-            }else{
-                element=document.createElement('video');
-                element.controls=true;
-                element.src=url;
-                element.width=400;
-            }
-            area.appendChild(element);
-        };
-        mediaRecorder.start();
-        alert("Recording started! Click OK to stop.");
-        setTimeout(()=>mediaRecorder.stop(),15000);
-    })
-    .catch(err=>alert("Error: "+err));
-}
-
-// Pomodoro Timer
-let pomodoroTime=25*60; // 25 minutes
-let pomodoroInterval;
-function startTimer(){
-    if(pomodoroInterval) return;
-    pomodoroInterval=setInterval(()=>{
-        if(pomodoroTime<=0){clearInterval(pomodoroInterval); pomodoroInterval=null; cutePopup("Pomodoro Finished! 🎉",2000); return;}
-        pomodoroTime--;
-        const min=Math.floor(pomodoroTime/60).toString().padStart(2,'0');
-        const sec=(pomodoroTime%60).toString().padStart(2,'0');
-        document.getElementById('timerDisplay').innerText=`${min}:${sec}`;
-    },1000);
-}
-function pauseTimer(){clearInterval(pomodoroInterval); pomodoroInterval=null;}
-function resetTimer(){pomodoroTime=25*60; document.getElementById('timerDisplay').innerText='25:00'; clearInterval(pomodoroInterval); pomodoroInterval=null;}
-
-// Cute Popups (hydration, stretching etc)
-const reminders=[
-    {msg:"💧 Hydration Time! Drinking water boosts your brain & energy!"},
-    {msg:"🧘 Stretching Time! Stretching improves circulation & relieves tension!"},
-    {msg:"🌬️ Deep Breathing! 3 deep breaths to refresh your mind!"},
-    {msg:"☕ Short Break! Boost focus & productivity!"}
-];
-function cutePopup(text,duration=3000){
-    const pop=document.createElement('div');
-    pop.style.position='fixed';
-    pop.style.top='20px';
-    pop.style.left='50%';
-    pop.style.transform='translateX(-50%)';
-    pop.style.background='#ffb6c1';
-    pop.style.color='white';
-    pop.style.padding='15px 25px';
-    pop.style.borderRadius='15px';
-    pop.style.fontSize='18px';
-    pop.style.zIndex='999';
-    pop.style.boxShadow='0 4px 15px rgba(0,0,0,0.3)';
-    pop.innerText=text;
-    document.body.appendChild(pop);
-    setTimeout(()=>document.body.removeChild(pop),duration);
-}
-// Start reminder loop
-setInterval(()=>{
-    const r=reminders[Math.floor(Math.random()*reminders.length)];
-    cutePopup(r.msg,4000);
-},5*60*1000); // every 5 minutes
-</script>
-</body>
-</html>
+    const text=document.getElementById('noteInput').value.trim();
+    if(!text) return;
+    const div=document.createElement('div');
+    div.className='note';
+    div.style.background=currentMarker;
+    div.innerText=text;
+    document.getElementBy
